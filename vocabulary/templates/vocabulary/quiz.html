@@ -1,0 +1,17 @@
+{% extends 'vocabulary/base.html' %}
+{% block title %}Тестирование{% endblock %}
+{% block content %}
+<h1>Тестирование</h1>
+{% if result %}
+<div class="detail-card"><h2>Результат: {{ result.correct_answers }}/{{ result.total_questions }}</h2><p class="translation">{{ result.percent }}%</p><a class="button" href="{% url 'quiz' %}">Пройти еще раз</a></div>
+{% elif questions %}
+<form method="post" class="form-card">{% csrf_token %}<input type="hidden" name="total" value="{{ questions|length }}">
+{% for item in questions %}
+    <fieldset class="question"><legend>{{ forloop.counter }}. {{ item.word.english }}</legend>
+    {% for option in item.options %}<label class="option"><input type="radio" name="word_{{ item.word.pk }}" value="{{ option }}" required> {{ option }}</label>{% endfor %}
+    </fieldset>
+{% endfor %}<button class="button">Завершить тест</button></form>
+{% else %}
+<p>Для тестирования нужно добавить слова в общий словарь.</p>
+{% endif %}
+{% endblock %}

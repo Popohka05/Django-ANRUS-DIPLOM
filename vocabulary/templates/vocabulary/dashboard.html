@@ -1,0 +1,25 @@
+{% extends 'vocabulary/base.html' %}
+{% block title %}Личный кабинет{% endblock %}
+{% block content %}
+<h1>Личный кабинет</h1>
+<div class="cards">
+    <div class="card"><strong>{{ learning_count }}</strong><span>слов изучается</span></div>
+    <div class="card"><strong>{{ learned_count }}</strong><span>слов выучено</span></div>
+    <div class="card"><strong>{{ correct_total }}</strong><span>правильных ответов</span></div>
+    <div class="card"><strong>{{ wrong_total }}</strong><span>ошибок</span></div>
+</div>
+<div class="two-columns">
+    <section>
+        <h2>Последние тесты</h2>
+        {% if results %}
+        <table><tr><th>Дата</th><th>Результат</th><th>Процент</th></tr>{% for item in results %}<tr><td>{{ item.created_at|date:"d.m.Y H:i" }}</td><td>{{ item.correct_answers }}/{{ item.total_questions }}</td><td>{{ item.percent }}%</td></tr>{% endfor %}</table>
+        {% else %}<p>Тесты еще не проходились.</p>{% endif %}
+    </section>
+    <section>
+        <h2>Последние тренировки</h2>
+        {% if attempts %}
+        <table><tr><th>Слово</th><th>Ответ</th><th>Статус</th></tr>{% for item in attempts %}<tr><td>{{ item.word.english }}</td><td>{{ item.answer }}</td><td>{% if item.is_correct %}Верно{% else %}Ошибка{% endif %}</td></tr>{% endfor %}</table>
+        {% else %}<p>Ответов пока нет.</p>{% endif %}
+    </section>
+</div>
+{% endblock %}

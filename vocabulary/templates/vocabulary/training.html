@@ -1,0 +1,17 @@
+{% extends 'vocabulary/base.html' %}
+{% block title %}Тренировка{% endblock %}
+{% block content %}
+<h1>Тренировка перевода</h1>
+{% if current %}
+<div class="detail-card training-card">
+    <span class="badge">{{ current.word.level }}</span>
+    <h2>{{ current.word.english }}</h2>
+    {% if current.word.example %}<blockquote>{{ current.word.example }}</blockquote>{% endif %}
+    <form method="post">{% csrf_token %}{{ form.as_p }}<button class="button">Проверить</button></form>
+    {% if result %}<div class="result {% if result.is_correct %}ok{% else %}bad{% endif %}">{% if result.is_correct %}Верно{% else %}Неверно. Правильный ответ: {{ result.expected }}{% endif %}</div>{% endif %}
+</div>
+{% else %}
+<p>В личном словаре нет слов со статусом «Изучается». Добавьте слова из общего словаря.</p>
+<a class="button" href="{% url 'word_list' %}">Перейти к словарю</a>
+{% endif %}
+{% endblock %}

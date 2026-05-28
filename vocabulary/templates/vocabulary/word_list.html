@@ -1,0 +1,21 @@
+{% extends 'vocabulary/base.html' %}
+{% block title %}Словарь{% endblock %}
+{% block content %}
+<div class="page-title"><h1>Словарь</h1>{% if user.is_authenticated %}<a class="button" href="{% url 'word_create' %}">Добавить слово</a>{% endif %}</div>
+<form method="get" class="filters">
+    <input name="q" value="{{ query }}" placeholder="Поиск по слову, переводу или примеру">
+    <select name="level"><option value="">Все уровни</option>{% for value,label in levels %}<option value="{{ value }}" {% if value == level %}selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+    <select name="category"><option value="">Все категории</option>{% for item in categories %}<option value="{{ item.slug }}" {% if item.slug == category_slug %}selected{% endif %}>{{ item.name }}</option>{% endfor %}</select>
+    <button>Найти</button>
+</form>
+<div class="word-grid">
+{% for word in words %}
+    <a class="word-card" href="{% url 'word_detail' word.pk %}">
+        <span class="badge">{{ word.level }}</span>
+        <h3>{{ word.english }}</h3>
+        <p>{{ word.translation }}</p>
+        {% if word.category %}<small>{{ word.category.name }}</small>{% endif %}
+    </a>
+{% empty %}<p>Слова не найдены.</p>{% endfor %}
+</div>
+{% endblock %}

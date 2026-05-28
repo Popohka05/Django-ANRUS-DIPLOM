@@ -1,0 +1,14 @@
+{% extends 'vocabulary/base.html' %}
+{% block title %}Мои слова{% endblock %}
+{% block content %}
+<h1>Мои слова</h1>
+<form method="get" class="filters small">
+    <select name="status"><option value="">Все статусы</option><option value="learning" {% if status == 'learning' %}selected{% endif %}>Изучается</option><option value="learned" {% if status == 'learned' %}selected{% endif %}>Выучено</option></select>
+    <button>Показать</button>
+</form>
+<table><tr><th>Слово</th><th>Перевод</th><th>Статус</th><th>Ответы</th><th>Действие</th></tr>
+{% for item in user_words %}
+<tr><td><a href="{% url 'word_detail' item.word.pk %}">{{ item.word.english }}</a></td><td>{{ item.word.translation }}</td><td>{{ item.get_status_display }}</td><td>{{ item.correct_answers }} верно / {{ item.wrong_answers }} ошибок</td><td>{% if item.status == 'learning' %}<a href="{% url 'mark_learned' item.pk %}">Выучено</a>{% else %}<a href="{% url 'mark_learning' item.pk %}">Повторять</a>{% endif %} · <a href="{% url 'remove_from_dictionary' item.pk %}">Удалить</a></td></tr>
+{% empty %}<tr><td colspan="5">Личный словарь пуст.</td></tr>{% endfor %}
+</table>
+{% endblock %}

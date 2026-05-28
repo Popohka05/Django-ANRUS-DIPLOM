@@ -1,0 +1,6 @@
+{% extends 'vocabulary/base.html' %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+<h1>Вход</h1>
+<form method="post" class="form-card">{% csrf_token %}{{ form.as_p }}<button class="button">Войти</button></form>
+{% endblock %}
