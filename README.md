@@ -146,3 +146,6 @@ english_vocab_trainer/
 - `.pytest_cache/`.
 
 Эти файлы и папки уже указаны в `.gitignore`.
+
+
+:)
