@@ -3,23 +3,97 @@
 {% block content %}
 <section class="hero">
     <div class="hero-text">
-        <p class="eyebrow">Django web application</p>
-        <h1>Веб-приложение для расширения словарного запаса</h1>
-        <p>Добавляйте английские слова, тренируйте перевод, проходите тесты и отслеживайте личный прогресс.</p>
+        <p class="eyebrow">Английский и русский словарь</p>
+        <h1>АНРУС</h1>
+        <p>Сервис помогает собирать личный словарь, закреплять перевод слов и видеть прогресс по уровням владения английским языком.</p>
         <div class="hero-actions">
-            <a class="button" href="{% url 'word_list' %}">Открыть словарь</a>
-            {% if not user.is_authenticated %}<a class="button secondary" href="{% url 'register' %}">Начать обучение</a>{% endif %}
+            <a class="button" href="{% url 'word_list' %}"><span aria-hidden="true">→</span> Открыть словарь</a>
+            {% if user.is_authenticated %}
+                <a class="button secondary" href="{% url 'training' %}"><span aria-hidden="true">✓</span> Начать тренировку</a>
+            {% else %}
+                <a class="button secondary" href="{% url 'register' %}"><span aria-hidden="true">+</span> Создать аккаунт</a>
+            {% endif %}
+        </div>
+        <div class="hero-shortcuts" aria-label="Быстрые действия">
+            <a href="{% url 'word_list' %}?level=A1">A1</a>
+            <a href="{% url 'word_list' %}?level=A2">A2</a>
+            <a href="{% url 'word_list' %}?level=B1">B1</a>
+            <a href="{% url 'word_list' %}?level=B2">B2</a>
+            <a href="{% url 'word_list' %}?level=C1">C1</a>
         </div>
     </div>
-    <div class="stats-card">
-        <strong>{{ words_count }}</strong><span>слов в базе</span>
-        <strong>{{ categories_count }}</strong><span>категорий</span>
-        <strong>{{ users_count }}</strong><span>пользователей</span>
+    <div class="hero-panel study-console">
+        <div class="console-top">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="console-word">
+            <span class="badge level-B1">B1</span>
+            <strong>progress</strong>
+            <small>прогресс</small>
+            <p>Progress is visible in the dashboard.</p>
+        </div>
+        <div class="console-stats">
+            <div><strong>{{ words_count }}</strong><span>слов</span></div>
+            <div><strong>{{ levels_count }}</strong><span>уровней</span></div>
+            <div><strong>{{ users_count }}</strong><span>пользователей</span></div>
+        </div>
     </div>
 </section>
+
+<section class="mode-lab" aria-label="Интерактивные режимы">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Сценарии работы</p>
+            <h2>Выберите режим обучения</h2>
+        </div>
+    </div>
+    <div class="mode-layout">
+        <div class="mode-tabs" role="tablist">
+            <button type="button" class="mode-tab is-active" data-mode-tab="dictionary">Словарь</button>
+            <button type="button" class="mode-tab" data-mode-tab="training">Тренировка</button>
+            <button type="button" class="mode-tab" data-mode-tab="quiz">Тест</button>
+        </div>
+        <article class="mode-card is-active" data-mode-card="dictionary">
+            <span class="mode-number">01</span>
+            <h3>Найти и разобрать слово</h3>
+            <p>Фильтр по уровню, поиск по переводу и каноническая форма помогают не терять нужные слова.</p>
+            <a class="button compact" href="{% url 'word_list' %}">Перейти к словарю</a>
+        </article>
+        <article class="mode-card" data-mode-card="training">
+            <span class="mode-number">02</span>
+            <h3>Закрепить перевод</h3>
+            <p>Пользователь вводит перевод, а система сохраняет правильные и ошибочные ответы.</p>
+            <a class="button compact" href="{% url 'training' %}">Открыть тренировку</a>
+        </article>
+        <article class="mode-card" data-mode-card="quiz">
+            <span class="mode-number">03</span>
+            <h3>Проверить результат</h3>
+            <p>Тестирование сохраняет итог и помогает увидеть прогресс в личном кабинете.</p>
+            <a class="button compact" href="{% url 'quiz' %}">Пройти тест</a>
+        </article>
+    </div>
+</section>
+
+<section class="level-showcase" aria-label="Слова по уровням">
+    <div class="section-heading">
+        <p class="eyebrow">Структура словаря</p>
+        <h2>Слова распределены по уровням</h2>
+    </div>
+    <div class="level-table">
+        {% for item in level_stats %}
+        <a class="level-row" href="{% url 'word_list' %}?level={{ item.code }}">
+            <span class="level-code level-{{ item.code }}">{{ item.code }}</span>
+            <span class="level-name">{{ item.label }}</span>
+            <span class="level-bar"><i style="width: {{ item.percent }}%"></i></span>
+            <strong>{{ item.count }}</strong>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
 <section class="features">
-    <article><h3>Личный словарь</h3><p>Слова можно добавлять в индивидуальный список и менять статус изучения.</p></article>
-    <article><h3>Тренировки</h3><p>Пользователь вводит перевод, а система фиксирует правильные и ошибочные ответы.</p></article>
-    <article><h3>Тестирование</h3><p>После прохождения теста результат сохраняется в личном кабинете.</p></article>
+    <article><span class="feature-number">01</span><h3>Общий словарь</h3><p>Поиск по английскому слову, переводу и примеру помогает быстро найти нужную карточку.</p></article>
+    <article><span class="feature-number">02</span><h3>Личный прогресс</h3><p>Пользователь добавляет слова в свой список и отмечает, какие уже выучены.</p></article>
+    <article><span class="feature-number">03</span><h3>Практика и тесты</h3><p>Ответы сохраняются в системе, а результаты отображаются в личном кабинете.</p></article>
 </section>
 {% endblock %}

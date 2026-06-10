@@ -1,17 +1,76 @@
 {% extends 'vocabulary/base.html' %}
 {% block title %}Тренировка{% endblock %}
 {% block content %}
-<h1>Тренировка перевода</h1>
-{% if current %}
-<div class="detail-card training-card">
-    <span class="badge">{{ current.word.level }}</span>
-    <h2>{{ current.word.english }}</h2>
-    {% if current.word.example %}<blockquote>{{ current.word.example }}</blockquote>{% endif %}
-    <form method="post">{% csrf_token %}{{ form.as_p }}<button class="button">Проверить</button></form>
-    {% if result %}<div class="result {% if result.is_correct %}ok{% else %}bad{% endif %}">{% if result.is_correct %}Верно{% else %}Неверно. Правильный ответ: {{ result.expected }}{% endif %}</div>{% endif %}
-</div>
+<section class="practice-head">
+    <div>
+        <p class="eyebrow">Практика перевода</p>
+        <h1>Тренировка</h1>
+        <p>Проходите слова карточками, возвращайтесь к предыдущим и отправляйте ответы одной тренировочной сессией.</p>
+    </div>
+    <a class="button secondary" href="{% url 'my_words' %}">Мои слова</a>
+</section>
+
+{% if session_results %}
+<section class="result-hero">
+    <span class="mode-number">Сессия</span>
+    <h2>{{ result.correct_answers }}/{{ result.total_questions }}</h2>
+    <p>Правильных ответов в тренировке</p>
+    <div class="training-results">
+        {% for item in session_results %}
+        <div class="training-result-row {% if item.is_correct %}ok{% else %}bad{% endif %}">
+            <strong>{{ item.word.english }}</strong>
+            <span>{% if item.is_correct %}верно{% else %}{{ item.expected }}{% endif %}</span>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="hero-actions">
+        <a class="button" href="{% url 'training' %}">Новая тренировка</a>
+        <a class="button secondary" href="{% url 'dashboard' %}">В личный кабинет</a>
+    </div>
+</section>
+{% elif result %}
+<section class="result-hero {% if result.is_correct %}ok{% else %}bad{% endif %}">
+    <span class="mode-number">Ответ</span>
+    <h2>{% if result.is_correct %}Верно{% else %}Нужно повторить{% endif %}</h2>
+    <p>{% if result.is_correct %}{{ result.word }} засчитано как правильный ответ.{% else %}Правильный ответ: {{ result.expected }}{% endif %}</p>
+    <a class="button" href="{% url 'training' %}">Продолжить</a>
+</section>
+{% elif training_items %}
+<form method="post" class="practice-shell" data-deck>{% csrf_token %}
+    <div class="practice-toolbar">
+        <div>
+            <span class="deck-counter"><b data-deck-current>1</b>/{{ training_items|length }}</span>
+            <span class="muted">слов в тренировке</span>
+        </div>
+        <div class="deck-progress" aria-hidden="true"><i data-deck-progress></i></div>
+    </div>
+
+    <div class="practice-deck">
+    {% for item in training_items %}
+        <section class="practice-card training-slide {% if forloop.first %}is-active{% endif %}" data-deck-card>
+            <span class="badge level-{{ item.word.level }}">{{ item.word.level }}</span>
+            <h2>{{ item.word.english }}</h2>
+            {% if item.word.transcription %}<p class="muted">{{ item.word.transcription }}</p>{% endif %}
+            {% if item.word.example %}<blockquote>{{ item.word.example }}</blockquote>{% endif %}
+            <label class="training-answer">
+                <span>Ваш перевод</span>
+                <input type="text" name="answer_{{ item.pk }}" autocomplete="off" placeholder="Введите перевод">
+            </label>
+        </section>
+    {% endfor %}
+    </div>
+
+    <div class="practice-nav">
+        <button type="button" class="button secondary" data-deck-prev>← Назад</button>
+        <button type="button" class="button secondary" data-deck-next>Дальше →</button>
+        <button class="button">Проверить тренировку</button>
+    </div>
+</form>
 {% else %}
-<p>В личном словаре нет слов со статусом «Изучается». Добавьте слова из общего словаря.</p>
-<a class="button" href="{% url 'word_list' %}">Перейти к словарю</a>
+<section class="detail-card">
+    <h2>В личном словаре нет слов со статусом «Изучается».</h2>
+    <p class="muted">Добавьте слова из общего словаря или верните выученные слова в изучение.</p>
+    <a class="button" href="{% url 'word_list' %}">Перейти к словарю</a>
+</section>
 {% endif %}
 {% endblock %}

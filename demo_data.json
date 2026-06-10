@@ -1,395 +1,2240 @@
 [
-{
-  "model": "auth.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$1000000$x0yqdtykkhh7KOcece2JzS$x2O2x3XNBkRgpd0GlU72caocJGBMM+WX3uW2a2ON0ZI=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "demo_student",
-    "first_name": "",
-    "last_name": "",
-    "email": "demo@example.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2026-05-28T20:42:46.655Z",
-    "groups": [],
-    "user_permissions": []
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$x0yqdtykkhh7KOcece2JzS$x2O2x3XNBkRgpd0GlU72caocJGBMM+WX3uW2a2ON0ZI=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "demo_student",
+      "first_name": "",
+      "last_name": "",
+      "email": "demo@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-06-10T09:00:00.000Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "vocabulary.category",
+    "pk": 1,
+    "fields": {
+      "name": "Core vocabulary",
+      "slug": "core-vocabulary",
+      "description": ""
+    }
+  },
+  {
+    "model": "vocabulary.category",
+    "pk": 2,
+    "fields": {
+      "name": "Communication",
+      "slug": "communication",
+      "description": ""
+    }
+  },
+  {
+    "model": "vocabulary.category",
+    "pk": 3,
+    "fields": {
+      "name": "Study and work",
+      "slug": "study-and-work",
+      "description": ""
+    }
+  },
+  {
+    "model": "vocabulary.category",
+    "pk": 4,
+    "fields": {
+      "name": "Technology",
+      "slug": "technology",
+      "description": ""
+    }
+  },
+  {
+    "model": "vocabulary.category",
+    "pk": 5,
+    "fields": {
+      "name": "Academic skills",
+      "slug": "academic-skills",
+      "description": ""
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 1,
+    "fields": {
+      "english": "apple",
+      "translation": "яблоко",
+      "transcription": "[ˈæpəl]",
+      "example": "I eat an apple every morning.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 2,
+    "fields": {
+      "english": "house",
+      "translation": "дом",
+      "transcription": "[haʊs]",
+      "example": "The house has a small garden.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 3,
+    "fields": {
+      "english": "family",
+      "translation": "семья",
+      "transcription": "[ˈfæməli]",
+      "example": "My family lives in this city.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 4,
+    "fields": {
+      "english": "friend",
+      "translation": "друг",
+      "transcription": "[frend]",
+      "example": "My friend helps me study English.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 5,
+    "fields": {
+      "english": "school",
+      "translation": "школа",
+      "transcription": "[skuːl]",
+      "example": "The school is near the park.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 6,
+    "fields": {
+      "english": "book",
+      "translation": "книга",
+      "transcription": "[bʊk]",
+      "example": "This book is easy to read.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 7,
+    "fields": {
+      "english": "water",
+      "translation": "вода",
+      "transcription": "[ˈwɔːtə]",
+      "example": "Water is important for health.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 8,
+    "fields": {
+      "english": "city",
+      "translation": "город",
+      "transcription": "[ˈsɪti]",
+      "example": "The city is large and busy.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 9,
+    "fields": {
+      "english": "food",
+      "translation": "еда",
+      "transcription": "[fuːd]",
+      "example": "The food is fresh.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 10,
+    "fields": {
+      "english": "weather",
+      "translation": "погода",
+      "transcription": "[ˈweðə]",
+      "example": "The weather is sunny today.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 11,
+    "fields": {
+      "english": "morning",
+      "translation": "утро",
+      "transcription": "[ˈmɔːnɪŋ]",
+      "example": "I study in the morning.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 12,
+    "fields": {
+      "english": "lesson",
+      "translation": "урок",
+      "transcription": "[ˈlesən]",
+      "example": "The lesson starts at nine.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 13,
+    "fields": {
+      "english": "habit",
+      "translation": "привычка",
+      "transcription": "[ˈhæbɪt]",
+      "example": "Reading every day is a useful habit.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 14,
+    "fields": {
+      "english": "journey",
+      "translation": "путешествие",
+      "transcription": "[ˈdʒɜːni]",
+      "example": "The journey took three hours.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 15,
+    "fields": {
+      "english": "choice",
+      "translation": "выбор",
+      "transcription": "[tʃɔɪs]",
+      "example": "You have a choice between two options.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 16,
+    "fields": {
+      "english": "schedule",
+      "translation": "расписание",
+      "transcription": "[ˈʃedjuːl]",
+      "example": "I checked my schedule for tomorrow.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 17,
+    "fields": {
+      "english": "skill",
+      "translation": "навык",
+      "transcription": "[skɪl]",
+      "example": "This course improves your speaking skill.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 18,
+    "fields": {
+      "english": "knowledge",
+      "translation": "знание",
+      "transcription": "[ˈnɒlɪdʒ]",
+      "example": "Knowledge grows with practice.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 19,
+    "fields": {
+      "english": "improve",
+      "translation": "улучшать",
+      "transcription": "[ɪmˈpruːv]",
+      "example": "Practice helps improve vocabulary.",
+      "level": "A2",
+      "part_of_speech": "verb",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 20,
+    "fields": {
+      "english": "describe",
+      "translation": "описывать",
+      "transcription": "[dɪˈskraɪb]",
+      "example": "Describe the picture in English.",
+      "level": "A2",
+      "part_of_speech": "verb",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 21,
+    "fields": {
+      "english": "explain",
+      "translation": "объяснять",
+      "transcription": "[ɪkˈspleɪn]",
+      "example": "Can you explain this rule?",
+      "level": "A2",
+      "part_of_speech": "verb",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 22,
+    "fields": {
+      "english": "prepare",
+      "translation": "готовить",
+      "transcription": "[prɪˈpeə]",
+      "example": "I prepare for the test every evening.",
+      "level": "A2",
+      "part_of_speech": "verb",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 23,
+    "fields": {
+      "english": "question",
+      "translation": "вопрос",
+      "transcription": "[ˈkwestʃən]",
+      "example": "The question is simple.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 24,
+    "fields": {
+      "english": "answer",
+      "translation": "ответ",
+      "transcription": "[ˈɑːnsə]",
+      "example": "Write your answer in the form.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 25,
+    "fields": {
+      "english": "achievement",
+      "translation": "достижение",
+      "transcription": "[əˈtʃiːvmənt]",
+      "example": "Passing the exam was a great achievement.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 26,
+    "fields": {
+      "english": "assignment",
+      "translation": "задание",
+      "transcription": "[əˈsaɪnmənt]",
+      "example": "The teacher gave us a new assignment.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 27,
+    "fields": {
+      "english": "deadline",
+      "translation": "срок сдачи",
+      "transcription": "[ˈdedlaɪn]",
+      "example": "The project deadline is next week.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 28,
+    "fields": {
+      "english": "requirement",
+      "translation": "требование",
+      "transcription": "[rɪˈkwaɪəmənt]",
+      "example": "The application meets the main requirement.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 29,
+    "fields": {
+      "english": "review",
+      "translation": "проверять",
+      "transcription": "[rɪˈvjuː]",
+      "example": "Please review the report before sending it.",
+      "level": "B1",
+      "part_of_speech": "verb",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 30,
+    "fields": {
+      "english": "discussion",
+      "translation": "обсуждение",
+      "transcription": "[dɪˈskʌʃən]",
+      "example": "The discussion helped us choose a solution.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 31,
+    "fields": {
+      "english": "opportunity",
+      "translation": "возможность",
+      "transcription": "[ˌɒpəˈtjuːnəti]",
+      "example": "This project is a good opportunity to learn.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 32,
+    "fields": {
+      "english": "decision",
+      "translation": "решение",
+      "transcription": "[dɪˈsɪʒən]",
+      "example": "The team made a decision.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 33,
+    "fields": {
+      "english": "progress",
+      "translation": "прогресс",
+      "transcription": "[ˈprəʊɡres]",
+      "example": "Your progress is visible in the dashboard.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 34,
+    "fields": {
+      "english": "resource",
+      "translation": "ресурс",
+      "transcription": "[rɪˈsɔːs]",
+      "example": "The website is a useful learning resource.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 35,
+    "fields": {
+      "english": "responsibility",
+      "translation": "ответственность",
+      "transcription": "[rɪˌspɒnsəˈbɪləti]",
+      "example": "Responsibility is important in teamwork.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 36,
+    "fields": {
+      "english": "confidence",
+      "translation": "уверенность",
+      "transcription": "[ˈkɒnfɪdəns]",
+      "example": "Practice builds confidence.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 37,
+    "fields": {
+      "english": "analysis",
+      "translation": "анализ",
+      "transcription": "[əˈnæləsɪs]",
+      "example": "The analysis shows user progress.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 38,
+    "fields": {
+      "english": "argument",
+      "translation": "аргумент",
+      "transcription": "[ˈɑːɡjəmənt]",
+      "example": "A strong argument needs evidence.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 39,
+    "fields": {
+      "english": "evidence",
+      "translation": "доказательство",
+      "transcription": "[ˈevɪdəns]",
+      "example": "Evidence supports the conclusion.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 40,
+    "fields": {
+      "english": "implementation",
+      "translation": "реализация",
+      "transcription": "[ˌɪmplɪmenˈteɪʃən]",
+      "example": "The implementation uses Django views.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 41,
+    "fields": {
+      "english": "integration",
+      "translation": "интеграция",
+      "transcription": "[ˌɪntɪˈɡreɪʃən]",
+      "example": "Integration connects the interface and database.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 42,
+    "fields": {
+      "english": "maintenance",
+      "translation": "сопровождение",
+      "transcription": "[ˈmeɪntənəns]",
+      "example": "Maintenance keeps the project stable.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 43,
+    "fields": {
+      "english": "performance",
+      "translation": "производительность",
+      "transcription": "[pəˈfɔːməns]",
+      "example": "Performance affects user experience.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 44,
+    "fields": {
+      "english": "reliability",
+      "translation": "надежность",
+      "transcription": "[rɪˌlaɪəˈbɪləti]",
+      "example": "Reliability is important for web applications.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 45,
+    "fields": {
+      "english": "strategy",
+      "translation": "стратегия",
+      "transcription": "[ˈstrætədʒi]",
+      "example": "The strategy defines the learning path.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 46,
+    "fields": {
+      "english": "evaluation",
+      "translation": "оценивание",
+      "transcription": "[ɪˌvæljuˈeɪʃən]",
+      "example": "Evaluation helps measure the result.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 47,
+    "fields": {
+      "english": "feedback",
+      "translation": "обратная связь",
+      "transcription": "[ˈfiːdbæk]",
+      "example": "Feedback helps improve the answer.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 48,
+    "fields": {
+      "english": "objective",
+      "translation": "цель",
+      "transcription": "[əbˈdʒektɪv]",
+      "example": "The objective is clear and measurable.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 49,
+    "fields": {
+      "english": "abstraction",
+      "translation": "абстракция",
+      "transcription": "[æbˈstrækʃən]",
+      "example": "Abstraction simplifies complex logic.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 50,
+    "fields": {
+      "english": "interoperability",
+      "translation": "совместимость систем",
+      "transcription": "[ˌɪntərɒpərəˈbɪləti]",
+      "example": "Interoperability allows systems to exchange data.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 51,
+    "fields": {
+      "english": "scalability",
+      "translation": "масштабируемость",
+      "transcription": "[ˌskeɪləˈbɪləti]",
+      "example": "Scalability matters for growing services.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 52,
+    "fields": {
+      "english": "optimization",
+      "translation": "оптимизация",
+      "transcription": "[ˌɒptɪmaɪˈzeɪʃən]",
+      "example": "Optimization reduces unnecessary work.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 53,
+    "fields": {
+      "english": "authentication",
+      "translation": "аутентификация",
+      "transcription": "[ɔːˌθentɪˈkeɪʃən]",
+      "example": "Authentication confirms the user identity.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 54,
+    "fields": {
+      "english": "authorization",
+      "translation": "авторизация",
+      "transcription": "[ˌɔːθəraɪˈzeɪʃən]",
+      "example": "Authorization checks access rights.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 55,
+    "fields": {
+      "english": "consistency",
+      "translation": "согласованность",
+      "transcription": "[kənˈsɪstənsi]",
+      "example": "Consistency makes data predictable.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 56,
+    "fields": {
+      "english": "methodology",
+      "translation": "методология",
+      "transcription": "[ˌmeθəˈdɒlədʒi]",
+      "example": "The methodology describes the project approach.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 57,
+    "fields": {
+      "english": "paradigm",
+      "translation": "парадигма",
+      "transcription": "[ˈpærədaɪm]",
+      "example": "A paradigm shapes how developers solve problems.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 58,
+    "fields": {
+      "english": "proficiency",
+      "translation": "владение языком",
+      "transcription": "[prəˈfɪʃənsi]",
+      "example": "Language proficiency grows with practice.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 59,
+    "fields": {
+      "english": "resilience",
+      "translation": "устойчивость",
+      "transcription": "[rɪˈzɪliəns]",
+      "example": "Resilience helps a system recover from errors.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 60,
+    "fields": {
+      "english": "taxonomy",
+      "translation": "классификация",
+      "transcription": "[tækˈsɒnəmi]",
+      "example": "A taxonomy organizes vocabulary by levels.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 61,
+    "fields": {
+      "english": "car",
+      "translation": "машина",
+      "transcription": "[kɑː]",
+      "example": "The car is parked near the house.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 62,
+    "fields": {
+      "english": "time",
+      "translation": "время",
+      "transcription": "[taɪm]",
+      "example": "Time is important during the test.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 1,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 63,
+    "fields": {
+      "english": "phone",
+      "translation": "телефон",
+      "transcription": "[fəʊn]",
+      "example": "I use my phone to read new words.",
+      "level": "A1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 64,
+    "fields": {
+      "english": "plan",
+      "translation": "план",
+      "transcription": "[plæn]",
+      "example": "A good plan helps with learning.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 65,
+    "fields": {
+      "english": "message",
+      "translation": "сообщение",
+      "transcription": "[ˈmesɪdʒ]",
+      "example": "I wrote a short message.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 66,
+    "fields": {
+      "english": "result",
+      "translation": "результат",
+      "transcription": "[rɪˈzʌlt]",
+      "example": "The result appears after the test.",
+      "level": "A2",
+      "part_of_speech": "noun",
+      "category": 5,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 67,
+    "fields": {
+      "english": "project",
+      "translation": "проект",
+      "transcription": "[ˈprɒdʒekt]",
+      "example": "The project is ready for presentation.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 68,
+    "fields": {
+      "english": "meeting",
+      "translation": "встреча",
+      "transcription": "[ˈmiːtɪŋ]",
+      "example": "The meeting starts after lunch.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 2,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 69,
+    "fields": {
+      "english": "solution",
+      "translation": "решение проблемы",
+      "transcription": "[səˈluːʃən]",
+      "example": "The team found a simple solution.",
+      "level": "B1",
+      "part_of_speech": "noun",
+      "category": 3,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 70,
+    "fields": {
+      "english": "accessibility",
+      "translation": "доступность",
+      "transcription": "[əkˌsesəˈbɪləti]",
+      "example": "Accessibility makes the interface easier to use.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 71,
+    "fields": {
+      "english": "usability",
+      "translation": "удобство использования",
+      "transcription": "[ˌjuːzəˈbɪləti]",
+      "example": "Usability is important for a learning website.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 72,
+    "fields": {
+      "english": "validation",
+      "translation": "валидация",
+      "transcription": "[ˌvælɪˈdeɪʃən]",
+      "example": "Validation checks the user input.",
+      "level": "B2",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 73,
+    "fields": {
+      "english": "deployment",
+      "translation": "развертывание",
+      "transcription": "[dɪˈplɔɪmənt]",
+      "example": "Deployment prepares the application for users.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 74,
+    "fields": {
+      "english": "modularity",
+      "translation": "модульность",
+      "transcription": "[ˌmɒdjuˈlærəti]",
+      "example": "Modularity makes the code easier to maintain.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.word",
+    "pk": 75,
+    "fields": {
+      "english": "persistence",
+      "translation": "сохранение данных",
+      "transcription": "[pəˈsɪstəns]",
+      "example": "Persistence keeps data after the session ends.",
+      "level": "C1",
+      "part_of_speech": "noun",
+      "category": 4,
+      "created_by": 1,
+      "created_at": "2026-06-10T09:00:00.000Z",
+      "updated_at": "2026-06-10T09:00:00.000Z"
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "word": 1,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "word": 2,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "word": 3,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "word": 4,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "word": 5,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 6,
+    "fields": {
+      "user": 1,
+      "word": 6,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "word": 7,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 8,
+    "fields": {
+      "user": 1,
+      "word": 8,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 9,
+    "fields": {
+      "user": 1,
+      "word": 9,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 10,
+    "fields": {
+      "user": 1,
+      "word": 10,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 11,
+    "fields": {
+      "user": 1,
+      "word": 11,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 12,
+    "fields": {
+      "user": 1,
+      "word": 12,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 13,
+    "fields": {
+      "user": 1,
+      "word": 13,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 14,
+    "fields": {
+      "user": 1,
+      "word": 14,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 15,
+    "fields": {
+      "user": 1,
+      "word": 15,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 16,
+    "fields": {
+      "user": 1,
+      "word": 16,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 17,
+    "fields": {
+      "user": 1,
+      "word": 17,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 18,
+    "fields": {
+      "user": 1,
+      "word": 18,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 19,
+    "fields": {
+      "user": 1,
+      "word": 19,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 20,
+    "fields": {
+      "user": 1,
+      "word": 20,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 21,
+    "fields": {
+      "user": 1,
+      "word": 21,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 22,
+    "fields": {
+      "user": 1,
+      "word": 22,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 23,
+    "fields": {
+      "user": 1,
+      "word": 23,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 24,
+    "fields": {
+      "user": 1,
+      "word": 24,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 25,
+    "fields": {
+      "user": 1,
+      "word": 25,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 26,
+    "fields": {
+      "user": 1,
+      "word": 26,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 27,
+    "fields": {
+      "user": 1,
+      "word": 27,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 28,
+    "fields": {
+      "user": 1,
+      "word": 28,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 29,
+    "fields": {
+      "user": 1,
+      "word": 29,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 30,
+    "fields": {
+      "user": 1,
+      "word": 30,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 31,
+    "fields": {
+      "user": 1,
+      "word": 31,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 32,
+    "fields": {
+      "user": 1,
+      "word": 32,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 33,
+    "fields": {
+      "user": 1,
+      "word": 33,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 34,
+    "fields": {
+      "user": 1,
+      "word": 34,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 35,
+    "fields": {
+      "user": 1,
+      "word": 35,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 36,
+    "fields": {
+      "user": 1,
+      "word": 36,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 37,
+    "fields": {
+      "user": 1,
+      "word": 37,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 38,
+    "fields": {
+      "user": 1,
+      "word": 38,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 39,
+    "fields": {
+      "user": 1,
+      "word": 39,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 40,
+    "fields": {
+      "user": 1,
+      "word": 40,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 41,
+    "fields": {
+      "user": 1,
+      "word": 41,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 42,
+    "fields": {
+      "user": 1,
+      "word": 42,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 43,
+    "fields": {
+      "user": 1,
+      "word": 43,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 44,
+    "fields": {
+      "user": 1,
+      "word": 44,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 45,
+    "fields": {
+      "user": 1,
+      "word": 45,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 46,
+    "fields": {
+      "user": 1,
+      "word": 46,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 47,
+    "fields": {
+      "user": 1,
+      "word": 47,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 48,
+    "fields": {
+      "user": 1,
+      "word": 48,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 49,
+    "fields": {
+      "user": 1,
+      "word": 49,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 50,
+    "fields": {
+      "user": 1,
+      "word": 50,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 51,
+    "fields": {
+      "user": 1,
+      "word": 51,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 52,
+    "fields": {
+      "user": 1,
+      "word": 52,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 53,
+    "fields": {
+      "user": 1,
+      "word": 53,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 54,
+    "fields": {
+      "user": 1,
+      "word": 54,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 55,
+    "fields": {
+      "user": 1,
+      "word": 55,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 56,
+    "fields": {
+      "user": 1,
+      "word": 56,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 57,
+    "fields": {
+      "user": 1,
+      "word": 57,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 58,
+    "fields": {
+      "user": 1,
+      "word": 58,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 59,
+    "fields": {
+      "user": 1,
+      "word": 59,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 60,
+    "fields": {
+      "user": 1,
+      "word": 60,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 61,
+    "fields": {
+      "user": 1,
+      "word": 61,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 62,
+    "fields": {
+      "user": 1,
+      "word": 62,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 63,
+    "fields": {
+      "user": 1,
+      "word": 63,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 64,
+    "fields": {
+      "user": 1,
+      "word": 64,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 65,
+    "fields": {
+      "user": 1,
+      "word": 65,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 66,
+    "fields": {
+      "user": 1,
+      "word": 66,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 67,
+    "fields": {
+      "user": 1,
+      "word": 67,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 68,
+    "fields": {
+      "user": 1,
+      "word": 68,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 69,
+    "fields": {
+      "user": 1,
+      "word": 69,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 70,
+    "fields": {
+      "user": 1,
+      "word": 70,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 71,
+    "fields": {
+      "user": 1,
+      "word": 71,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 72,
+    "fields": {
+      "user": 1,
+      "word": 72,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 73,
+    "fields": {
+      "user": 1,
+      "word": 73,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 74,
+    "fields": {
+      "user": 1,
+      "word": 74,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
+  },
+  {
+    "model": "vocabulary.userword",
+    "pk": 75,
+    "fields": {
+      "user": 1,
+      "word": 75,
+      "status": "learning",
+      "correct_answers": 0,
+      "wrong_answers": 0,
+      "added_at": "2026-06-10T09:00:00.000Z",
+      "last_practiced_at": null
+    }
   }
-},
-{
-  "model": "vocabulary.category",
-  "pk": 1,
-  "fields": {
-    "name": "Education",
-    "slug": "education",
-    "description": ""
-  }
-},
-{
-  "model": "vocabulary.category",
-  "pk": 2,
-  "fields": {
-    "name": "Daily life",
-    "slug": "daily-life",
-    "description": ""
-  }
-},
-{
-  "model": "vocabulary.category",
-  "pk": 3,
-  "fields": {
-    "name": "Work",
-    "slug": "work",
-    "description": ""
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 1,
-  "fields": {
-    "english": "knowledge",
-    "translation": "знание",
-    "transcription": "[ˈnɒlɪdʒ]",
-    "example": "Knowledge grows with practice.",
-    "level": "A2",
-    "part_of_speech": "noun",
-    "category": 1,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.392Z",
-    "updated_at": "2026-05-28T20:42:47.392Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 2,
-  "fields": {
-    "english": "skill",
-    "translation": "навык",
-    "transcription": "[skɪl]",
-    "example": "This course improves your speaking skill.",
-    "level": "A2",
-    "part_of_speech": "noun",
-    "category": 1,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.409Z",
-    "updated_at": "2026-05-28T20:42:47.409Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 3,
-  "fields": {
-    "english": "achievement",
-    "translation": "достижение",
-    "transcription": "[əˈtʃiːvmənt]",
-    "example": "Passing the exam was a great achievement.",
-    "level": "B1",
-    "part_of_speech": "noun",
-    "category": 1,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.426Z",
-    "updated_at": "2026-05-28T20:42:47.426Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 4,
-  "fields": {
-    "english": "assignment",
-    "translation": "задание",
-    "transcription": "[əˈsaɪnmənt]",
-    "example": "The teacher gave us a new assignment.",
-    "level": "B1",
-    "part_of_speech": "noun",
-    "category": 1,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.442Z",
-    "updated_at": "2026-05-28T20:42:47.442Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 5,
-  "fields": {
-    "english": "journey",
-    "translation": "путешествие",
-    "transcription": "[ˈdʒɜːni]",
-    "example": "The journey took three hours.",
-    "level": "A2",
-    "part_of_speech": "noun",
-    "category": 2,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.467Z",
-    "updated_at": "2026-05-28T20:42:47.467Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 6,
-  "fields": {
-    "english": "habit",
-    "translation": "привычка",
-    "transcription": "[ˈhæbɪt]",
-    "example": "Reading every day is a useful habit.",
-    "level": "A2",
-    "part_of_speech": "noun",
-    "category": 2,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.482Z",
-    "updated_at": "2026-05-28T20:42:47.482Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 7,
-  "fields": {
-    "english": "schedule",
-    "translation": "расписание",
-    "transcription": "[ˈʃedjuːl]",
-    "example": "I checked my schedule for tomorrow.",
-    "level": "B1",
-    "part_of_speech": "noun",
-    "category": 2,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.497Z",
-    "updated_at": "2026-05-28T20:42:47.497Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 8,
-  "fields": {
-    "english": "choice",
-    "translation": "выбор",
-    "transcription": "[tʃɔɪs]",
-    "example": "You have a choice between two options.",
-    "level": "A2",
-    "part_of_speech": "noun",
-    "category": 2,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.515Z",
-    "updated_at": "2026-05-28T20:42:47.515Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 9,
-  "fields": {
-    "english": "deadline",
-    "translation": "срок сдачи",
-    "transcription": "[ˈdedlaɪn]",
-    "example": "The project deadline is next week.",
-    "level": "B1",
-    "part_of_speech": "noun",
-    "category": 3,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.538Z",
-    "updated_at": "2026-05-28T20:42:47.538Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 10,
-  "fields": {
-    "english": "improve",
-    "translation": "улучшать",
-    "transcription": "[ɪmˈpruːv]",
-    "example": "Practice helps improve vocabulary.",
-    "level": "A2",
-    "part_of_speech": "verb",
-    "category": 3,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.553Z",
-    "updated_at": "2026-05-28T20:42:47.553Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 11,
-  "fields": {
-    "english": "review",
-    "translation": "проверять",
-    "transcription": "[rɪˈvjuː]",
-    "example": "Please review the report before sending it.",
-    "level": "B1",
-    "part_of_speech": "verb",
-    "category": 3,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.571Z",
-    "updated_at": "2026-05-28T20:42:47.571Z"
-  }
-},
-{
-  "model": "vocabulary.word",
-  "pk": 12,
-  "fields": {
-    "english": "requirement",
-    "translation": "требование",
-    "transcription": "[rɪˈkwaɪəmənt]",
-    "example": "The application meets the main requirement.",
-    "level": "B2",
-    "part_of_speech": "noun",
-    "category": 3,
-    "created_by": 1,
-    "created_at": "2026-05-28T20:42:47.586Z",
-    "updated_at": "2026-05-28T20:42:47.586Z"
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 1,
-  "fields": {
-    "user": 1,
-    "word": 1,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.400Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 2,
-  "fields": {
-    "user": 1,
-    "word": 2,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.419Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 3,
-  "fields": {
-    "user": 1,
-    "word": 3,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.434Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 4,
-  "fields": {
-    "user": 1,
-    "word": 4,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.449Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 5,
-  "fields": {
-    "user": 1,
-    "word": 5,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.474Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 6,
-  "fields": {
-    "user": 1,
-    "word": 6,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.489Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 7,
-  "fields": {
-    "user": 1,
-    "word": 7,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.506Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 8,
-  "fields": {
-    "user": 1,
-    "word": 8,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.523Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 9,
-  "fields": {
-    "user": 1,
-    "word": 9,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.546Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 10,
-  "fields": {
-    "user": 1,
-    "word": 10,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.561Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 11,
-  "fields": {
-    "user": 1,
-    "word": 11,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.579Z",
-    "last_practiced_at": null
-  }
-},
-{
-  "model": "vocabulary.userword",
-  "pk": 12,
-  "fields": {
-    "user": 1,
-    "word": 12,
-    "status": "learning",
-    "correct_answers": 0,
-    "wrong_answers": 0,
-    "added_at": "2026-05-28T20:42:47.594Z",
-    "last_practiced_at": null
-  }
-}
 ]

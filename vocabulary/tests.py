@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
 from django.test import Client, TestCase
 from django.urls import reverse
+from .forms import WordForm
 from .models import Category, QuizResult, UserWord, Word
+from .word_utils import canonicalize_english_word
 
 
 class VocabularyFlowTests(TestCase):
@@ -24,12 +26,18 @@ class VocabularyFlowTests(TestCase):
     def test_home_page_loads(self):
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'расширения словарного запаса')
+        self.assertContains(response, 'АНРУС')
 
     def test_dictionary_search(self):
         response = self.client.get(reverse('word_list'), {'q': 'knowledge'})
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'knowledge')
+
+    def test_dictionary_search_uses_canonical_word_form(self):
+        Word.objects.create(english='book', translation='книга', level='A1')
+        response = self.client.get(reverse('word_list'), {'q': 'books'})
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'book')
 
     def test_add_word_to_personal_dictionary(self):
         self.client.login(username='student', password='StrongPass123!')
@@ -50,3 +58,21 @@ class VocabularyFlowTests(TestCase):
         response = self.client.post(reverse('quiz'), {f'word_{self.word.pk}': 'знание', 'total': '1'}, follow=True)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(QuizResult.objects.filter(user=self.user).count(), 1)
+
+    def test_word_is_saved_in_canonical_form(self):
+        word = Word.objects.create(english='Books', translation='книга', level='A1')
+        self.assertEqual(word.english, 'book')
+        self.assertEqual(canonicalize_english_word('studies'), 'study')
+        self.assertEqual(canonicalize_english_word('analysis'), 'analysis')
+        self.assertEqual(canonicalize_english_word('business'), 'business')
+
+    def test_word_form_rejects_duplicate_plural_form(self):
+        Word.objects.create(english='book', translation='книга', level='A1')
+        form = WordForm(data={
+            'english': 'books',
+            'translation': 'книги',
+            'level': 'A1',
+            'part_of_speech': 'noun',
+        })
+        self.assertFalse(form.is_valid())
+        self.assertIn('book', form.errors['english'][0])

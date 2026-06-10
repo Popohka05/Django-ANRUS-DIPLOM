@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Vocabulary Trainer{% endblock %}</title>
+    <title>{% block title %}АНРУС{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'vocabulary/css/style.css' %}">
     <script src="{% static 'vocabulary/js/app.js' %}" defer></script>
 </head>
 <body>
 <header class="site-header">
-    <a href="{% url 'home' %}" class="logo">Vocabulary Trainer</a>
+    <a href="{% url 'home' %}" class="logo">АНРУС</a>
     <button class="menu-button" type="button" data-menu-button>Меню</button>
     <nav class="nav" data-menu>
         <a href="{% url 'word_list' %}">Словарь</a>
@@ -34,6 +34,5 @@
     {% endif %}
     {% block content %}{% endblock %}
 </main>
-<footer class="footer">Учебный Django-проект по расширению английского словарного запаса.</footer>
 </body>
 </html>

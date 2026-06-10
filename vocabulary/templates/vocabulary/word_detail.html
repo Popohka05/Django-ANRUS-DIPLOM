@@ -2,13 +2,13 @@
 {% block title %}{{ word.english }}{% endblock %}
 {% block content %}
 <article class="detail-card">
-    <span class="badge">{{ word.level }}</span>
+    <span class="badge level-{{ word.level }}">{{ word.level }}</span>
     <h1>{{ word.english }}</h1>
     <p class="translation">{{ word.translation }}</p>
     {% if word.transcription %}<p class="muted">{{ word.transcription }}</p>{% endif %}
     {% if word.example %}<blockquote>{{ word.example }}</blockquote>{% endif %}
+    <p>Уровень: {{ word.get_level_display }}</p>
     <p>Часть речи: {{ word.get_part_of_speech_display }}</p>
-    {% if word.category %}<p>Категория: {{ word.category.name }}</p>{% endif %}
     <div class="actions">
         {% if user.is_authenticated %}
             {% if user_word %}<span class="pill">В словаре: {{ user_word.get_status_display }}</span>{% else %}<a class="button" href="{% url 'add_to_dictionary' word.pk %}">Добавить в личный словарь</a>{% endif %}

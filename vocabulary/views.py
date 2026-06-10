@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 from django.db.models import Count, Q
 from django.shortcuts import get_object_or_404, redirect, render
 from .forms import RegisterForm, TrainingAnswerForm, WordForm
-from .models import Category, QuizResult, TrainingAttempt, UserWord, Word
+from .models import QuizResult, TrainingAttempt, UserWord, Word
+from .word_utils import canonicalize_english_word
 
 
 def normalize_answer(value: str) -> str:
@@ -14,10 +15,26 @@ def normalize_answer(value: str) -> str:
 
 
 def home(request):
+    total_words = Word.objects.count()
+    level_counts = {
+        item['level']: item['count']
+        for item in Word.objects.values('level').annotate(count=Count('id'))
+    }
+    level_stats = []
+    for code, label in Word.LEVEL_CHOICES:
+        count = level_counts.get(code, 0)
+        level_stats.append({
+            'code': code,
+            'label': label,
+            'count': count,
+            'percent': round(count / total_words * 100) if total_words else 0,
+        })
+
     return render(request, 'vocabulary/home.html', {
-        'words_count': Word.objects.count(),
-        'categories_count': Category.objects.count(),
+        'words_count': total_words,
+        'levels_count': sum(1 for item in level_stats if item['count']),
         'users_count': User.objects.count(),
+        'level_stats': level_stats,
     })
 
 
@@ -52,21 +69,22 @@ def dashboard(request):
 def word_list(request):
     query = request.GET.get('q', '').strip()
     level = request.GET.get('level', '').strip()
-    category_slug = request.GET.get('category', '').strip()
     words = Word.objects.select_related('category').all()
     if query:
-        words = words.filter(Q(english__icontains=query) | Q(translation__icontains=query) | Q(example__icontains=query))
+        canonical_query = canonicalize_english_word(query)
+        words = words.filter(
+            Q(english__icontains=query) |
+            Q(english__icontains=canonical_query) |
+            Q(translation__icontains=query) |
+            Q(example__icontains=query)
+        )
     if level:
         words = words.filter(level=level)
-    if category_slug:
-        words = words.filter(category__slug=category_slug)
     return render(request, 'vocabulary/word_list.html', {
         'words': words,
         'query': query,
         'level': level,
-        'category_slug': category_slug,
         'levels': Word.LEVEL_CHOICES,
-        'categories': Category.objects.all(),
     })
 
 
@@ -156,21 +174,60 @@ def remove_from_dictionary(request, pk):
 
 @login_required
 def training(request):
-    current = UserWord.objects.select_related('word').filter(user=request.user, status='learning').order_by('last_practiced_at', 'added_at').first()
+    training_items = list(
+        UserWord.objects.select_related('word')
+        .filter(user=request.user, status='learning')
+        .order_by('last_practiced_at', 'added_at')[:10]
+    )
     form = TrainingAnswerForm(request.POST or None)
     result = None
-    if request.method == 'POST' and current and form.is_valid():
-        answer = form.cleaned_data['answer']
-        is_correct = normalize_answer(answer) == normalize_answer(current.word.translation)
-        TrainingAttempt.objects.create(user=request.user, word=current.word, answer=answer, is_correct=is_correct)
-        current.register_answer(is_correct)
-        result = {
-            'is_correct': is_correct,
-            'expected': current.word.translation,
-            'word': current.word.english,
-        }
+    session_results = []
+
+    if request.method == 'POST' and training_items:
+        if 'answer' in request.POST and form.is_valid():
+            current = training_items[0]
+            answer = form.cleaned_data['answer']
+            is_correct = normalize_answer(answer) == normalize_answer(current.word.translation)
+            TrainingAttempt.objects.create(user=request.user, word=current.word, answer=answer, is_correct=is_correct)
+            current.register_answer(is_correct)
+            result = {
+                'is_correct': is_correct,
+                'expected': current.word.translation,
+                'word': current.word.english,
+            }
+        else:
+            for item in training_items:
+                answer = request.POST.get(f'answer_{item.pk}', '').strip()
+                if not answer:
+                    session_results.append({
+                        'word': item.word,
+                        'answer': '',
+                        'is_correct': False,
+                        'expected': item.word.translation,
+                    })
+                    continue
+                is_correct = normalize_answer(answer) == normalize_answer(item.word.translation)
+                TrainingAttempt.objects.create(user=request.user, word=item.word, answer=answer, is_correct=is_correct)
+                item.register_answer(is_correct)
+                session_results.append({
+                    'word': item.word,
+                    'answer': answer,
+                    'is_correct': is_correct,
+                    'expected': item.word.translation,
+                })
+            result = {
+                'correct_answers': sum(1 for item in session_results if item['is_correct']),
+                'total_questions': len(session_results),
+            }
         form = TrainingAnswerForm()
-    return render(request, 'vocabulary/training.html', {'current': current, 'form': form, 'result': result})
+
+    return render(request, 'vocabulary/training.html', {
+        'current': training_items[0] if training_items else None,
+        'training_items': training_items,
+        'form': form,
+        'result': result,
+        'session_results': session_results,
+    })
 
 
 @login_required
@@ -192,7 +249,7 @@ def quiz(request):
                 user_word.register_answer(True)
         result = QuizResult.objects.create(user=request.user, total_questions=total, correct_answers=correct)
     elif words:
-        selected = random.sample(words, min(5, len(words)))
+        selected = random.sample(words, min(12, len(words)))
         translations = [word.translation for word in words]
         for word in selected:
             wrong = [value for value in translations if value != word.translation]

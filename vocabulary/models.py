@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
+from .word_utils import canonicalize_english_word
 
 
 class Category(models.Model):
@@ -65,6 +66,10 @@ class Word(models.Model):
             models.Index(fields=['english']),
             models.Index(fields=['level']),
         ]
+
+    def save(self, *args, **kwargs):
+        self.english = canonicalize_english_word(self.english)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'{self.english} — {self.translation}'

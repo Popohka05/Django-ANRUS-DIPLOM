@@ -2,6 +2,11 @@ from django.contrib import admin
 from .models import Category, QuizResult, TrainingAttempt, UserWord, Word
 
 
+admin.site.site_header = 'Администрирование АНРУС'
+admin.site.site_title = 'АНРУС'
+admin.site.index_title = 'Панель управления словарем'
+
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug')

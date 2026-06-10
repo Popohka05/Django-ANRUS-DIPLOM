@@ -1,17 +1,66 @@
 {% extends 'vocabulary/base.html' %}
 {% block title %}Тестирование{% endblock %}
 {% block content %}
-<h1>Тестирование</h1>
+<section class="practice-head">
+    <div>
+        <p class="eyebrow">Проверка знаний</p>
+        <h1>Тест по словам</h1>
+        <p>Отвечайте на вопросы по одному, возвращайтесь назад и проверяйте выбранные варианты перед завершением.</p>
+    </div>
+    <a class="button secondary" href="{% url 'word_list' %}">Открыть словарь</a>
+</section>
+
 {% if result %}
-<div class="detail-card"><h2>Результат: {{ result.correct_answers }}/{{ result.total_questions }}</h2><p class="translation">{{ result.percent }}%</p><a class="button" href="{% url 'quiz' %}">Пройти еще раз</a></div>
+<section class="result-hero">
+    <span class="mode-number">Итог</span>
+    <h2>{{ result.correct_answers }}/{{ result.total_questions }}</h2>
+    <p class="translation">{{ result.percent }}%</p>
+    <div class="hero-actions">
+        <a class="button" href="{% url 'quiz' %}">Пройти еще раз</a>
+        <a class="button secondary" href="{% url 'dashboard' %}">В личный кабинет</a>
+    </div>
+</section>
 {% elif questions %}
-<form method="post" class="form-card">{% csrf_token %}<input type="hidden" name="total" value="{{ questions|length }}">
-{% for item in questions %}
-    <fieldset class="question"><legend>{{ forloop.counter }}. {{ item.word.english }}</legend>
-    {% for option in item.options %}<label class="option"><input type="radio" name="word_{{ item.word.pk }}" value="{{ option }}" required> {{ option }}</label>{% endfor %}
-    </fieldset>
-{% endfor %}<button class="button">Завершить тест</button></form>
+<form method="post" class="practice-shell" data-deck>{% csrf_token %}
+    <input type="hidden" name="total" value="{{ questions|length }}">
+    <div class="practice-toolbar">
+        <div>
+            <span class="deck-counter"><b data-deck-current>1</b>/{{ questions|length }}</span>
+            <span class="muted">вопросов в тесте</span>
+        </div>
+        <div class="deck-progress" aria-hidden="true"><i data-deck-progress></i></div>
+    </div>
+
+    <div class="practice-deck">
+    {% for item in questions %}
+        <fieldset class="practice-card {% if forloop.first %}is-active{% endif %}" data-deck-card>
+            <legend>Вопрос {{ forloop.counter }}</legend>
+            <span class="badge level-{{ item.word.level }}">{{ item.word.level }}</span>
+            <h2>{{ item.word.english }}</h2>
+            {% if item.word.transcription %}<p class="muted">{{ item.word.transcription }}</p>{% endif %}
+            {% if item.word.example %}<blockquote>{{ item.word.example }}</blockquote>{% endif %}
+            <div class="answer-grid">
+                {% for option in item.options %}
+                <label class="answer-option">
+                    <input type="radio" name="word_{{ item.word.pk }}" value="{{ option }}">
+                    <span>{{ option }}</span>
+                </label>
+                {% endfor %}
+            </div>
+        </fieldset>
+    {% endfor %}
+    </div>
+
+    <div class="practice-nav">
+        <button type="button" class="button secondary" data-deck-prev>← Назад</button>
+        <button type="button" class="button secondary" data-deck-next>Дальше →</button>
+        <button class="button">Завершить тест</button>
+    </div>
+</form>
 {% else %}
-<p>Для тестирования нужно добавить слова в общий словарь.</p>
+<section class="detail-card">
+    <h2>Для тестирования нужно добавить слова в общий словарь.</h2>
+    <a class="button" href="{% url 'word_list' %}">Перейти к словарю</a>
+</section>
 {% endif %}
 {% endblock %}
