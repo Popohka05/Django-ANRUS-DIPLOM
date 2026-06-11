@@ -1,0 +1,14 @@
+meta:
+  environment: python
+  toolchain:
+    name: pip
+    version: 3.12
+
+build:
+  requirementsPath: requirements.txt
+  useCache: false
+
+run:
+  command: "sh -c 'python manage.py collectstatic --no-input && python manage.py migrate --no-input && python manage.py load_demo_words && gunicorn english_vocab_trainer.wsgi:application --bind 0.0.0.0:${PORT:-80}'"
+  persistenceMount: /data
+  containerPort: 80
