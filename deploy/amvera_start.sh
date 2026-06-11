@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-set -o errexit
+#!/bin/sh
+set -e
 
 export AMVERA=${AMVERA:-true}
 export DEBUG=${DEBUG:-False}
