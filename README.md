@@ -141,7 +141,7 @@ english_vocab_trainer/
 
 ## Деплой на Amvera Cloud
 
-Проект подготовлен к деплою на Amvera Cloud через файл `amvera.yml`.
+Проект подготовлен к деплою на Amvera Cloud через файл `amvera.yaml`.
 
 1. Создайте приложение в Amvera Cloud.
 2. Подключите GitHub-репозиторий проекта.
