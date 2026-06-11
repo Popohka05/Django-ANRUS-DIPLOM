@@ -1,0 +1,14 @@
+meta:
+  environment: python
+  toolchain:
+    name: pip
+    version: "3.13"
+
+build:
+  requirementsPath: requirements.txt
+  useCache: false
+
+run:
+  command: bash deploy/amvera_start.sh
+  persistenceMount: /data
+  containerPort: 80
