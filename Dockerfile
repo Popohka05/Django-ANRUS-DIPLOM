@@ -16,4 +16,4 @@ RUN mkdir -p /data
 
 EXPOSE 80
 
-CMD sh -c "python manage.py collectstatic --no-input && python manage.py migrate --no-input && python manage.py load_demo_words && gunicorn english_vocab_trainer.wsgi:application --bind 0.0.0.0:${PORT:-80}"
+CMD ["python", "start_amvera.py"]

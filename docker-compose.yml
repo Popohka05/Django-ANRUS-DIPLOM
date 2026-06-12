@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    container_name: anrus-diplom
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-django-insecure-yandex-cloud-demo-key-change-me}
+      DEBUG: "False"
+      DATA_DIR: /data
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-*}
+      CSRF_TRUSTED_ORIGINS: ${CSRF_TRUSTED_ORIGINS:-}
+      CSRF_COOKIE_SECURE: ${CSRF_COOKIE_SECURE:-False}
+      SESSION_COOKIE_SECURE: ${SESSION_COOKIE_SECURE:-False}
+    volumes:
+      - anrus_data:/data
+
+volumes:
+  anrus_data:
